@@ -11,6 +11,9 @@ export class ShowRolloverWithBudget extends Feature {
   }
 
   invoke() {
+    $('.toolkit-budget-rollover').removeClass('.toolkit-budget-rollover');
+    $('.toolkit-budget-rollover-amount').remove();
+
     $('.budget-table-row.is-sub-category').each((_, element) => {
       const { monthlySubCategoryBudgetCalculation, monthlySubCategoryBudget, subCategory } = getEmberView(element.id, 'category');
 
